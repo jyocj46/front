@@ -1,0 +1,202 @@
+/* General page styles */
+.tareas-page {
+    padding: 30px;
+    color: #f5f5f5;
+    background-color: #121212; /* Fondo oscuro */
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Grid layout for task cards */
+.tareas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Individual task card */
+.tarea-card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación de hover */
+}
+
+.tarea-card:hover {
+    transform: translateY(-5px); /* Levanta un poco la tarjeta */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
+/* Title of task */
+.tarea-card h3 {
+    margin: 0 0 15px;
+    color: #00bcd4; /* Color vibrante */
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Task detail overlay */
+.tarea-detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+/* Detail modal styling */
+.tarea-detail {
+    background-color: #181818;
+    padding: 40px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 550px;
+    color: #f5f5f5;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tarea-detail h2 {
+    color: #00bcd4; /* Color vibrante para el título */
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Action buttons inside the task detail modal */
+.tarea-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button styling */
+.edit-button,
+.delete-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Edit button */
+.edit-button {
+    background-color: #4caf50; /* Verde */
+    color: white;
+}
+
+.edit-button:hover {
+    transform: translateY(-3px); /* Efecto de hover */
+    background-color: #45a049; /* Tonalidad más oscura */
+}
+
+/* Delete button */
+.delete-button {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.delete-button:hover {
+    transform: translateY(-3px); /* Efecto de hover */
+    background-color: #e53935; /* Tonalidad más oscura */
+}
+
+/* Form input and textarea */
+label {
+    display: block;
+    margin: 12px 0 5px;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background-color: #282828; /* Fondo más oscuro para los inputs */
+    color: #f5f5f5;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00bcd4; /* Borde color vibrante en foco */
+    outline: none;
+}
+
+/* Save and cancel buttons inside the form */
+.save-button,
+.cancel-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Save button */
+.save-button {
+    background-color: #4caf50; /* Verde */
+    color: white;
+}
+
+.save-button:hover {
+    transform: translateY(-3px);
+    background-color: #45a049; /* Tonalidad más oscura */
+}
+
+/* Cancel button */
+.cancel-button {
+    background-color: #f44336; /* Rojo */
+    color: white;
+}
+
+.cancel-button:hover {
+    transform: translateY(-3px);
+    background-color: #e53935; /* Tonalidad más oscura */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .tareas-grid {
+        grid-template-columns: 1fr; /* Una columna en dispositivos pequeños */
+    }
+
+    .tarea-detail {
+        width: 90%; /* Ajuste del tamaño del modal en móviles */
+        padding: 20px;
+    }
+
+    .tarea-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .edit-button,
+    .delete-button,
+    .save-button,
+    .cancel-button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
